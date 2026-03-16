@@ -1,1 +1,39 @@
-{{ site_title }}
+{% import 'components/_icons.html' as icons %}
+
+{% set current_page = current_page | default(site_title) %}
+{% set nav_items = [
+	{ title: 'Statistics', href: '/index.html', icon: 'statistics' },
+	{ title: 'Websites', href: '#', icon: 'websites' },
+	{ title: 'Configurations', href: '#', icon: 'configurations' },
+	{ title: 'Payments', href: '#', icon: 'payments' },
+	{ title: 'Insights', href: '#', icon: 'insights' },
+	{ title: 'Help Center', href: '#', icon: 'help-center' },
+	{ title: 'Account', href: '#', icon: 'account' }
+] %}
+
+<div class="sidebar">
+	<div class="sidebar-logo">
+		<img src="img/svg/logo.svg" alt="">
+	</div>
+	<div class="sidebar-group">
+		<div class="sidebar-group__title">Base</div>
+		<ul class="sidebar-group__nav">
+			{% for item in nav_items %}
+			<li{% if current_page == item.title %} class="active"{% endif %}>
+				<a href="{{ item.href }}">
+					{{ icons.icon(item.icon) }}
+					<span>{{ item.title }}</span>
+				</a>
+			</li>
+			{% endfor %}
+		</ul>
+	</div>
+	<div class="sidebar-account">
+		<img src="img/avatar.jpg" alt="" class="sidebar-account__avatar">
+		<div class="sidebar-account__info">
+			<b>HAIDER MENESES</b>
+			<p>Admin</p>
+		</div>
+		<div class="sidebar-account__exit">{{ icons.icon('exit') }}</div>
+	</div>
+</div>

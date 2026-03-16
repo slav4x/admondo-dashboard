@@ -1,0 +1,30 @@
+.header
+	width: 100%
+	padding: 20px
+	@include flexbox
+	align-items: center
+	gap: 8px
+	&-title
+		font-size: 32px
+		font-weight: 500
+		margin-right: auto
+	&-balance
+		background: var(--color-white)
+		padding: 8px 12px
+		border-radius: 99px
+		font-size: 14px
+		line-height: 20px
+		font-weight: 500
+		color: #8C95A4
+		span
+			color: var(--color-black)
+	&-icon
+		--color-icon: var(--color-black)
+
+		background: var(--color-white)
+		padding: 10px
+		border-radius: 99px
+		svg
+			display: block
+			width: 16px
+			height: 16px

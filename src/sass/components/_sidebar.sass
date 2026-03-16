@@ -1,0 +1,89 @@
+.sidebar
+	width: 300px
+	height: 100%
+	overflow: auto
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	&-logo
+		padding: 20px 24px
+		width: 100%
+	&-group
+		padding: 0 12px
+		width: 100%
+		&__title
+			font-size: 12px
+			opacity: 0.5
+			padding: 8px 12px
+		&__nav
+			li
+				a
+					--color-icon: var(--color-black)
+
+					display: flex
+					flex-wrap: wrap
+					align-items: center
+					gap: 14px
+					padding: 12px
+					border-radius: 6px
+					transition: var(--transition-ms)
+					svg
+						display: block
+						width: 20px
+						height: 20px
+						path
+							transition: var(--transition-ms)
+					span
+						flex: 1
+						font-size: 14px
+						font-weight: 500
+					&::after
+						content: ''
+						display: block
+						width: 12px
+						height: 12px
+						background: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M4.4548 10.3348C4.3598 10.3348 4.2648 10.2998 4.1898 10.2248C4.0448 10.0798 4.0448 9.83977 4.1898 9.69477L7.4498 6.43477C7.6898 6.19477 7.6898 5.80477 7.4498 5.56477L4.1898 2.30477C4.0448 2.15977 4.0448 1.91977 4.1898 1.77477C4.3348 1.62977 4.5748 1.62977 4.7198 1.77477L7.9798 5.03477C8.2348 5.28977 8.3798 5.63477 8.3798 5.99977C8.3798 6.36477 8.2398 6.70977 7.9798 6.96477L4.7198 10.2248C4.6448 10.2948 4.5498 10.3348 4.4548 10.3348Z' fill='black' fill-opacity='0.5'/%3E%3C/svg%3E%0A") no-repeat center
+				&.active a,
+				a:hover
+					background: #ECEDE7
+					--color-icon: var(--color-accent)
+	&-account
+		margin-top: auto
+		padding: 20px
+		@include flexbox
+		align-items: center
+		gap: 12px
+		width: 100%
+		&__avatar
+			width: 32px
+			height: 32px
+			border-radius: 100%
+			object-fit: cover
+			object-position: center
+		&__info
+			flex: 1
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 4px
+			b
+				font-weight: 400
+				text-transform: uppercase
+				line-height: 1.1
+				font-size: 14px
+			p
+				font-size: 12px
+				line-height: 1.1
+				opacity: 0.5
+		&__exit
+			--color-icon: var(--color-black)
+
+			cursor: pointer
+			svg
+				display: block
+				width: 16px
+				height: 16px
+				path
+					transition: var(--transition-ms)
+			&:hover
+				--color-icon: var(--color-accent)
