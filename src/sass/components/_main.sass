@@ -1,12 +1,22 @@
 .main
 	width: calc(100% - 300px)
-	overflow: auto
+	overflow: hidden
 	height: 100%
 	display: flex
 	align-items: flex-start
 	flex-direction: column
 
-.content
+.wrapper
 	padding: 0 20px 20px
 	width: 100%
+	height: calc(100% - 76px)
+	display: flex
+
+.content
+	width: 100%
 	flex: 1
+	border: 1px solid rgba(79, 93, 116, 0.1)
+	border-radius: 28px
+	background: var(--color-white)
+	overflow: auto
+	padding: 20px
