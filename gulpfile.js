@@ -1,6 +1,7 @@
 import 'dotenv/config';
 import { src, dest, watch, series, parallel } from 'gulp';
 import browserSyncLib from 'browser-sync';
+import nunjucks from 'nunjucks';
 import { nunjucksCompile } from 'gulp-nunjucks';
 import * as dartSass from 'sass';
 import gulpSass from 'gulp-sass';
@@ -20,6 +21,9 @@ import babel from 'gulp-babel';
 
 const browserSync = browserSyncLib.create();
 const sass = gulpSass(dartSass);
+const nunjucksEnv = new nunjucks.Environment(
+  new nunjucks.FileSystemLoader(['src/'], { noCache: true })
+);
 
 const isProd = process.env.NODE_ENV === 'production';
 
@@ -29,7 +33,7 @@ export async function clean() {
 
 export function html() {
   return src(['src/**/*.html', '!src/components/**/*.html'])
-    .pipe(nunjucksCompile({ path: ['src/'] }))
+    .pipe(nunjucksCompile({}, { env: nunjucksEnv }))
     .pipe(replace('?cb', `?cb=${Date.now()}`))
     .pipe(typograf({ locale: ['ru', 'en-US'], htmlEntity: { type: 'digit' } }))
     .pipe(gulpIf(isProd, replace('libs.css', 'libs.min.css')))
