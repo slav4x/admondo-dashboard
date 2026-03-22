@@ -1,0 +1,102 @@
+.table
+	border-collapse: collapse
+	border-spacing: 0
+	line-height: 20px
+	font-size: 15px
+	table-layout: fixed
+	width: 100%
+	&-wrapper
+		width: calc(100% + 40px)
+		margin: 0 -20px
+		padding: 0 20px
+		overflow: auto
+		&::-webkit-scrollbar
+			display: none
+	col
+		--col-width: var(--xl, var(--l, var(--m, var(--s, var(--xs)))))
+		width: var(--col-width)
+	th, td
+		&:not(:first-child)
+			text-align: right
+		&:first-child
+			text-align: left
+	th
+		font-size: 14px
+		font-weight: 500
+		padding: 14px 16px
+		&.sort
+			position: relative
+			padding-right: 34px
+			cursor: pointer
+			&::after
+				content: ''
+				position: absolute
+				top: 0
+				bottom: 0
+				right: 16px
+				margin: auto 0
+				display: block
+				width: 12px
+				height: 12px
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.22501 3.35999L3.36499 1.5L1.505 3.35999' stroke='%238C95A4' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.36499 10.5V1.5' stroke='%238C95A4' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.77496 8.63965L8.63498 10.4996L10.495 8.63965' stroke='%238C95A4' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.63501 1.5V10.5' stroke='%238C95A4' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+				transition: var(--transition-ms)
+			&:hover::after
+				background-image: url("data:image/svg+xml,%3Csvg width='12' height='12' viewBox='0 0 12 12' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M5.22501 3.35999L3.36499 1.5L1.505 3.35999' stroke='%230C47F2' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M3.36499 10.5V1.5' stroke='%230C47F2' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M6.77502 8.64062L8.63504 10.5006L10.495 8.64062' stroke='%230C47F2' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.63501 1.5V10.5' stroke='%230C47F2' stroke-width='0.9' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+	td
+		padding: 14px 16px
+	tbody
+		tr
+			border-bottom: 1px dashed rgba(79, 93, 116, 0.1)
+			transition: var(--transition-ms)
+			&:hover
+				background: var(--color-gray)
+				.table-actions span
+					background: var(--color-white)
+	&-name
+		b
+			font-weight: 500
+		small
+			display: block
+			font-size: 12px
+			line-height: 16px
+			color: #364661
+			margin-top: 2px
+	&-status
+		font-weight: 500
+		border-radius: 99px
+		padding: 2px 10px
+		background: var(--color-gray)
+		&.green
+			color: #10A910
+			background: rgba(16, 169, 16, 0.05)
+		&.red
+			color: #A50037
+			background: rgba(165, 0, 55, 0.05)
+		&.blue
+			color: #0C47F2
+			background: rgba(12, 71, 242, 0.05)
+	&-actions
+		@include flexbox
+		align-items: center
+		justify-content: flex-end
+		gap: 12px
+		span
+			--color-icon: var(--color-black)
+			@include flexbox
+			align-items: center
+			justify-content: center
+			width: 48px
+			height: 48px
+			background: var(--color-gray)
+			border-radius: 12px
+			cursor: pointer
+			transition: var(--transition-ms)
+			svg
+				display: block
+				width: 20px
+				height: 20px
+				path
+					transition: var(--transition-ms)
+			&:hover
+				background: var(--color-white)
+				--color-icon: var(--color-accent)

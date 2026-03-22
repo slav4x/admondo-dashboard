@@ -20,3 +20,84 @@
 	background: var(--color-white)
 	overflow: auto
 	padding: 20px
+	display: flex
+	flex-direction: column
+	align-items: flex-start
+	gap: 20px
+
+.top
+	@include flexbox
+	align-items: center
+	gap: 12px
+	width: 100%
+	&-search
+		flex: 1
+		position: relative
+		input
+			width: 100%
+			height: 56px
+			background: var(--color-gray)
+			border-radius: 8px
+			padding: 0
+			padding-left: 50px
+			padding-right: 16px
+			color: var(--color-black)
+			@include placeholder
+				color: #4F5D74
+		button
+			width: 24px
+			height: 24px
+			position: absolute
+			top: 16px
+			left: 16px
+			padding: 2px
+			background: transparent
+			svg
+				display: block
+				width: 20px
+				height: 20px
+				--color-icon: var(--color-black)
+	&-btn
+		padding: 0 32px
+		@include flexbox
+		align-items: center
+		justify-content: center
+		gap: 10px
+		height: 56px
+		border-radius: 8px
+		background: var(--color-accent)
+		cursor: pointer
+		color: var(--color-white)
+		font-weight: 500
+		svg
+			display: block
+			width: 20px
+			height: 20px
+			--color-icon: var(--color-white)
+		i
+			font-style: normal
+
+.not-found
+	margin: auto
+	@include flexbox
+	flex-direction: column
+	align-items: center
+	justify-content: center
+	gap: 24px
+	span
+		@include flexbox
+		align-items: center
+		justify-content: center
+		border: 1px solid rgba(79, 93, 116, 0.1)
+		border-radius: 12px
+		width: 48px
+		height: 48px
+		svg
+			display: block
+			width: 24px
+			height: 24px
+			--color-icon: var(--color-black)
+	b
+		font-size: 24px
+		font-weight: 500
+		text-align: center

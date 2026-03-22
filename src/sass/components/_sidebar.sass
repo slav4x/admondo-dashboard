@@ -16,7 +16,12 @@
 			opacity: 0.5
 			padding: 8px 12px
 		&__nav
+			@include flexbox
+			flex-direction: column
+			align-items: flex-start
+			gap: 4px
 			li
+				width: 100%
 				a
 					--color-icon: var(--color-black)
 

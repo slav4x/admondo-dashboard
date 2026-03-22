@@ -1,0 +1,79 @@
+@media (max-width: 600px)
+	.table
+		col
+			--col-width: var(--xs, var(--s, var(--m, var(--l, var(--xl)))))
+
+	.layout
+		flex-wrap: wrap
+		overflow: initial
+
+	.sidebar
+		width: 100%
+		height: auto
+		order: 1
+		position: fixed
+		z-index: 50
+		left: 0
+		bottom: 0
+		padding: 12px
+		background: var(--color-white)
+		border-top-left-radius: 12px
+		border-top-right-radius: 12px
+		border-top: 1px solid rgba(0,0,0,.1)
+		&-logo
+			display: none
+		&-group
+			padding: 0
+			&__nav
+				flex-direction: row
+				gap: 0
+				li
+					flex: 1
+					a
+						flex-direction: column
+						align-items: center
+						padding: 4px
+						background: transparent !important
+						gap: 4px
+						span
+							display: block
+							font-size: 10px
+							font-weight: 400
+							text-align: center
+							line-height: 12px
+					&.active a,
+					a:hover
+						color: var(--color-accent)
+		&-account
+			display: none
+
+	.main
+		width: 100%
+		height: auto
+
+	.wrapper
+		padding: 0 0 69px
+
+	.header
+		gap: 40px 8px
+		&-logo
+			display: block
+		&-title
+			width: 100%
+			order: 1
+			margin-right: 0
+		&-balance
+			margin-left: auto
+
+	.content
+		border: 0
+		border-bottom-left-radius: 0px
+		border-bottom-right-radius: 0px
+
+	.top
+		&-btn
+			padding: 0
+			width: 48px
+			gap: 8px
+			span
+				display: none

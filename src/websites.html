@@ -1,0 +1,73 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'My websites' %}
+{% set current_page = 'Websites' %}
+
+{% import 'components/_icons.html' as icons %}
+
+{% block content %}
+
+<div class="content">
+	<div class="top">
+		<form action="#" class="top-search">
+			<input type="text" placeholder="Search">
+			<button type="submit">{{ icons.icon('search') }}</button>
+		</form>
+		<button class="top-btn">
+			<span>New<i> website</i></span>
+			{{ icons.icon('plus') }}
+		</button>
+	</div>
+	<div class="table-wrapper">
+		<table class="table">
+			{# 
+				--xl = 1600+
+				--l = 1600-1200
+				--m = 1200-960
+				--s = 960-600
+				--xs = 600-0
+			#}
+			<colgroup>
+				<col style="--xl: 320px; --l: 220px;">
+				<col style="--xl: 220px; --l: 180px;">
+				<col style="--xl: 220px; --l: 180px;">
+				<col style="--xl: 220px; --l: 180px;">
+				<col style="--xl: 200px; --l: 110px;">
+				<col style="--xl: 160px; --l: 110px;">
+				<col style="--xl: 190px; --l: 120px;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Sitename</th>
+					<th class="sort">Views</th>
+					<th class="sort">CPM</th>
+					<th class="sort">Week revenue</th>
+					<th>Status</th>
+					<th>Last activity</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span class="table-name"><b>mesotheliomatriallawyer.info</b><small>ID1437061</small></span></td>
+					<td>14,200</td>
+					<td>0.9</td>
+					<td>$12.40</td>
+					<td><span class="table-status green">Verified</span></td>
+					<td>2 min ago</td>
+					<td>
+						<div class="table-actions">
+							<span>{{ icons.icon('settings') }}</span>
+							<span>{{ icons.icon('eye') }}</span>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	{# <div class="not-found">
+		<span>{{ icons.icon('level') }}</span>
+		<b>No websites found</b>
+	</div> #}
+</div>
+
+{% endblock %}

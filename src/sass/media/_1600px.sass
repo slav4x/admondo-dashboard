@@ -1,1 +1,83 @@
 @media (max-width: 1600px)
+	body
+		font-size: 13px
+
+	.table
+		font-size: 13px
+		&-wrapper
+			width: calc(100% + 32px)
+			margin: 0 -16px
+			padding: 0 16px
+		col
+			--col-width: var(--l, var(--xl))
+		th
+			font-size: 12px
+			font-weight: 500
+			padding: 12px
+			&.sort
+				padding-right: 30px
+		td
+			padding: 12px
+		&-name
+			small
+				font-size: 11px
+		&-actions
+			gap: 8px
+			span
+				width: 36px
+				height: 36px
+				border-radius: 8px
+				svg
+					width: 16px
+					height: 16px
+
+	.header
+		&-title
+			font-size: 24px
+			line-height: 30px
+
+	.sidebar
+		width: 240px
+		&-group
+			&__nav
+				li
+					a
+						gap: 10px
+						padding: 10px
+
+	.main
+		width: calc(100% - 240px)
+
+	.wrapper
+		height: calc(100% - 76px)
+
+	.content
+		border-radius: 12px
+		padding: 16px
+		gap: 16px
+
+	.top
+		&-search
+			flex: 1
+			position: relative
+			input
+				height: 48px
+				padding-left: 42px
+			button
+				width: 20px
+				height: 20px
+				top: 14px
+				left: 12px
+				svg
+					width: 16px
+					height: 16px
+		&-btn
+			height: 48px
+			svg
+				width: 12px
+				height: 12px
+
+	.not-found
+		gap: 16px
+		b
+			font-size: 18px
