@@ -1,0 +1,89 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'My сonfigurations' %}
+{% set current_page = 'Configurations' %}
+
+{% import 'components/_icons.html' as icons %}
+
+{% block content %}
+
+<div class="content">
+	<div class="top">
+		<form action="#" class="top-search">
+			<input type="text" placeholder="Search">
+			<button type="submit">{{ icons.icon('search') }}</button>
+		</form>
+		<button class="top-btn">
+			<span>New сonfiguration</span>
+			{{ icons.icon('plus') }}
+		</button>
+	</div>
+	<div class="table-wrapper">
+		<table class="table">
+			{# 
+				--xl = 1600+
+				--l = 1600-1200
+				--m = 1200-960
+				--s = 960-600
+				--xs = 600-0
+			#}
+			<colgroup>
+				<col style="--xl: 155px; --l: 150px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 155px; --l: 105px;">
+				<col style="--xl: 190px; --l: 120px;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>Name</th>
+					<th>CMS</th>
+					<th>Plugin</th>
+					<th>Version</th>
+					<th>Date</th>
+					<th>Site</th>
+					<th>Width</th>
+					<th>Status</th>
+					<th>Switcher</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td><span class="table-name"><b>Config_name_1</b><small>4 ad blocks</small></span></td>
+					<td>Wordpress</td>
+					<td>Name</td>
+					<td>1.01</td>
+					<td>12.02.2025</td>
+					<td><a href="#" target="_blank" class="table-link">test.com</a></td>
+					<td>150px</td>
+					<td><span class="table-status red">Declined</span></td>
+					<td>
+						<div class="table-switcher">
+							<label>
+								<input type="checkbox" name="switch[]">
+								<span></span>
+							</label>
+						</div>
+					</td>
+					<td>
+						<div class="table-actions">
+							<span>{{ icons.icon('delete') }}</span>
+							<span>{{ icons.icon('import') }}</span>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	{# <div class="not-found">
+		<span>{{ icons.icon('level') }}</span>
+		<b>No websites found</b>
+	</div> #}
+</div>
+
+{% endblock %}

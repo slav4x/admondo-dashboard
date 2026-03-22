@@ -100,3 +100,34 @@
 			&:hover
 				background: var(--color-white)
 				--color-icon: var(--color-accent)
+	&-link
+		color: var(--color-accent)
+		text-decoration: underline
+	&-switcher
+		@include flexbox
+		align-items: center
+		justify-content: flex-end
+		label
+			input
+				@include visually-hidden
+				&:checked + span
+					background: #10A910
+					&::before
+						margin-left: 22px
+			span
+				width: 46px
+				height: 24px
+				border-radius: 99px
+				background: #DEDEDE
+				padding: 3px
+				display: block
+				cursor: pointer
+				transition: var(--transition-ms)
+				&::before
+					content: ''
+					width: 18px
+					height: 18px
+					background: #fff
+					border-radius: 100%
+					display: block
+					transition: var(--transition-ms)

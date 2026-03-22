@@ -30,6 +30,24 @@
 				svg
 					width: 16px
 					height: 16px
+		&-switcher
+			@include flexbox
+			align-items: center
+			justify-content: flex-end
+			label
+				input
+					@include visually-hidden
+					&:checked + span
+						background: #10A910
+						&::before
+							margin-left: 16px
+				span
+					width: 34px
+					height: 18px
+					padding: 2px
+					&::before
+						width: 14px
+						height: 14px
 
 	.header
 		&-title
