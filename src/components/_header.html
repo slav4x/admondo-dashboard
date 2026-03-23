@@ -1,10 +1,12 @@
 {% import 'components/_icons.html' as icons %}
 
-<div class="header">
+<div class="header{% if header == false %} header-hide{% endif %}">
 	<div class="header-logo">
 		<img src="img/svg/logo.svg" alt="">
 	</div>
+	{% if header !== false %}
 	<div class="header-title">{{ site_title }}</div>
+	{% endif %}
 	<div class="header-balance">Balance <span>$250.00</span></div>
 	<div class="header-icon">{{ icons.icon('account') }}</div>
 	<div class="header-icon">{{ icons.icon('notifications') }}</div>

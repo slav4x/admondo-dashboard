@@ -1,0 +1,66 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Instructions' %}
+{% set current_page = 'Insights' %}
+{% set header = false %}
+
+{% import 'components/_icons.html' as icons %}
+
+{% block content %}
+
+<div class="content">
+	<div class="instructions">
+		<div class="instructions-content">
+			<h2>Filter</h2>
+			<div class="instructions-filter">
+				<label class="instructions-filter-select">
+					<span>Choose a CMS</span>
+					<p>Wordpess</p>
+					<select name="cms">
+						<option value="Wordpess" selected>Wordpess</option>
+						<option value="Joomla">Joomla</option>
+						<option value="Other">Other</option>
+					</select>
+				</label>
+				<label class="instructions-filter-select">
+					<span>Version</span>
+					<p>1.02 beta</p>
+					<select name="version">
+						<option value="1.02 beta" selected>1.02 beta</option>
+						<option value="1.02">1.02</option>
+						<option value="1.03">1.03</option>
+					</select>
+				</label>
+			</div>
+		</div>
+		<div class="instructions-video">
+			<iframe width="560" height="315" src="https://www.youtube.com/embed/xbU0q-gD2kg?si=qQAFH7XLjCzRiZKE" title="YouTube video player" frameborder="0" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+		</div>
+		<div class="instructions-content">
+			<h2>Instruction</h2>
+			<ol>
+				<li>Log into the one.com Control Panel.</li>
+				<li>Click DNS settings on the Advanced settings tile.</li>
+				<li>Go to DNS record</li>
+				<li>Under create new record, click TXT.</li>
+				<li>Enter the TXT string under Value.</li>
+				<li>Optionally enter a TTL, or leave it empty to default to 3600 seconds.</li>
+			</ol>
+		</div>
+		<img src="img/demo.jpg" alt="" loading="lazy">
+		<div class="instructions-content">
+			<h2>h2 Heading</h2>
+			<ul>
+				<li>List item</li>
+				<li>List item</li>
+				<li>List item</li>
+			</ul>
+			<h3>h3 Heading</h3>
+			<h4>h4 Heading</h4>
+			<p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Praesentium facilis voluptate maxime consequuntur aliquam qui mollitia ducimus. Et voluptatem ea quo alias inventore eos, iusto sit exercitationem eum laudantium perferendis?</p>
+			<p>Obcaecati, voluptates! Ad natus accusamus nobis in corrupti recusandae, asperiores, tempore aut harum nam iusto incidunt, itaque repudiandae molestias sapiente voluptatem? Nihil, officiis dignissimos reiciendis voluptates voluptas laborum obcaecati. Eaque.</p>
+			<p>Exercitationem eos maxime magni modi cupiditate tempore? Sint minima dolor sunt, necessitatibus eius voluptates, eveniet illo, eligendi consectetur corrupti aliquam qui facilis nobis odit. Veniam excepturi maxime labore culpa porro.</p>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
