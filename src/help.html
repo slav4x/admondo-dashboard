@@ -1,0 +1,72 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Help Center' %}
+{% set current_page = 'Help' %}
+
+{% import 'components/_icons.html' as icons %}
+
+{% block content %}
+
+<div class="content">
+	<div class="top">
+		<form action="#" class="top-search">
+			<input type="text" placeholder="Search">
+			<button type="submit">{{ icons.icon('search') }}</button>
+		</form>
+		<button class="btn">
+			<span>Create</span>
+			{{ icons.icon('plus') }}
+		</button>
+	</div>
+	<div class="table-wrapper">
+		<table class="table table-left">
+			{# 
+				--xl = 1600+
+				--l = 1600-1200
+				--m = 1200-960
+				--s = 960-600
+				--xs = 600-0
+			#}
+			<colgroup>
+				<col style="--xl: 250px; --l: 180px;">
+				<col style="--xl: 250px; --l: 180px;">
+				<col style="--xl: 250px; --l: 180px;">
+				<col style="--xl: 250px; --l: 180px;">
+				<col style="--xl: 250px; --l: 180px;">
+				<col style="--xl: 250px; --l: 180px;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>№</th>
+					<th>Departament</th>
+					<th>Subject</th>
+					<th>Requestor</th>
+					<th>Status</th>
+					<th>Date</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>№3245235</td>
+					<td>Customer support</td>
+					<td>#WYS-672621</td>
+					<td>HAIDER MENESES</td>
+					<td><span class="table-status blue">Moderation</span></td>
+					<td>2025-08-0709:39:58</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	<div class="not-found">
+		<div class="not-found-icon">{{ icons.icon('level') }}</div>
+		<div class="not-found-text">
+			<div class="not-found-title">Support Tickets</div>
+			<div class="not-found-description">You don't have any requests yet</div>
+		</div>
+		<button class="btn">
+			<span>Create an request</span>
+			{{ icons.icon('plus') }}
+		</button>
+	</div>
+</div>
+
+{% endblock %}
