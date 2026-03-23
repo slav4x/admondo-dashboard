@@ -1,0 +1,77 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'My advertisement' %}
+{% set current_page = 'Advertisement' %}
+
+{% import 'components/_icons.html' as icons %}
+
+{% block content %}
+
+<div class="content">
+	<div class="top">
+		<form action="#" class="top-search">
+			<input type="text" placeholder="Search">
+			<button type="submit">{{ icons.icon('search') }}</button>
+		</form>
+		<button class="btn">
+			<span>Add advertisement</span>
+			{{ icons.icon('plus') }}
+		</button>
+	</div>
+	<div class="table-wrapper">
+		<table class="table table-left">
+			{# 
+				--xl = 1600+
+				--l = 1600-1200
+				--m = 1200-960
+				--s = 960-600
+				--xs = 600-0
+			#}
+			<colgroup>
+				<col style="--xl: 140px; --l: 90px;">
+				<col style="--xl: 300px; --l: 200px;">
+				<col style="--xl: 400px; --l: 260px;">
+				<col style="--xl: 140px; --l: 120px;">
+				<col style="--xl: 140px; --l: 70px;">
+				<col style="--xl: 140px; --l: 120px;">
+				<col style="--xl: 140px; --l: 120px;">
+				<col style="--xl: 90px; --l: 70px;">
+			</colgroup>
+			<thead>
+				<tr>
+					<th>ID</th>
+					<th>Redirect to</th>
+					<th>Picture</th>
+					<th>Size</th>
+					<th>Clicks</th>
+					<th>Start date</th>
+					<th>End date</th>
+					<th>Actions</th>
+				</tr>
+			</thead>
+			<tbody>
+				<tr>
+					<td>32525235</td>
+					<td><a href="#" class="table-link">https://admondo.org/#join</a></td>
+					<td>/app/backend/uploads photo_3_2025-03-10_15-39-29.jpg</td>
+					<td>150px × 150px</td>
+					<td>12</td>
+					<td>12.02.2025</td>
+					<td>12.03.2025</td>
+					<td>
+						<div class="table-actions">
+							<span>{{ icons.icon('delete') }}</span>
+						</div>
+					</td>
+				</tr>
+			</tbody>
+		</table>
+	</div>
+	{# <div class="not-found">
+		<div class="not-found-icon">{{ icons.icon('level') }}</div>
+		<div class="not-found-text">
+			<div class="not-found-title">No advertisement found</div>
+		</div>
+	</div> #}
+</div>
+
+{% endblock %}
