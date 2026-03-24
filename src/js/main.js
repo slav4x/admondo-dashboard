@@ -1,5 +1,5 @@
 document.addEventListener('DOMContentLoaded', () => {
-  document.querySelectorAll('.instructions-filter-select').forEach((label) => {
+  document.querySelectorAll('.select').forEach((label) => {
     const select = label.querySelector('select');
     const output = label.querySelector('p');
 
