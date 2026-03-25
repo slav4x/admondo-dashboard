@@ -1,0 +1,97 @@
+{% extends 'components/_layout.html' %}
+{% set site_title = 'Profile Settings' %}
+{% set current_page = 'Account' %}
+
+{% import 'components/_icons.html' as icons %}
+
+{% block content %}
+
+<div class="content">
+	<div class="account">
+		<div class="account-profile">
+			<img src="img/avatar.jpg" alt="" class="account-profile__avatar">
+			<div class="account-profile__info">
+				<b>HAIDER MENESES</b>
+				<p>Admin</p>
+			</div>
+		</div>
+		<ul class="account-tabs">
+			<li data-tab="Account" class="active">Account</li>
+			<li data-tab="Security">Security</li>
+		</ul>
+		<div class="account-tab active" data-tab="Account">
+			<div class="account-group">
+				<label class="input account-half">
+					<span>Country of residence</span>
+					<input type="text" value="" placeholder="" />
+				</label>
+				<label class="input account-half">
+					<span>City</span>
+					<input type="text" value="" placeholder="" />
+				</label>
+				<label class="input">
+					<span>Address (street, building number, apartment)</span>
+					<input type="text" value="" placeholder="" />
+				</label>
+			</div>
+			<div class="account-group">
+				<h3 class="account-group__title">Contact information</h3>
+				<label class="input account-half">
+					<span>First name</span>
+					<input type="text" value="HAIDER" placeholder="" />
+				</label>
+				<label class="input account-half">
+					<span>Last name</span>
+					<input type="text" value="MENESES" placeholder="" />
+				</label>
+				<label class="input">
+					<span>Email</span>
+					<input type="text" value="haiderm890@gmail.com" placeholder="" />
+				</label>
+				<label class="input">
+					<span>Phone number</span>
+					<input type="text" value="573127934987" placeholder="" />
+				</label>
+				<label class="select account-half">
+					<span>Messenger</span>
+					<p>Telegram</p>
+					<select name="cms">
+						<option value="Telegram" selected>Telegram</option>
+						<option value="What's App">What's App</option>
+						<option value="Other">Other</option>
+					</select>
+				</label>
+				<label class="input account-half">
+					<span>Number</span>
+					<input type="text" value="573127934987" placeholder="" />
+				</label>
+			</div>
+			<div class="account-group">
+				<button class="btn account-half"><span>Save</span></button>
+				<button class="btn btn-red account-half"><span>Log out</span></button>
+			</div>
+		</div>
+		<div class="account-tab" data-tab="Security">
+			<div class="account-group">
+				<label class="input">
+					<span>Current password</span>
+					<input type="password" placeholder="" />
+					<span class="input-pass-view"></span>
+				</label>
+				<label class="input">
+					<span>New password</span>
+					<input type="password" placeholder="" />
+					<span class="input-pass-view"></span>
+				</label>
+				<label class="input">
+					<span>Confirm password</span>
+					<input type="password" placeholder="" />
+					<span class="input-pass-view"></span>
+				</label>
+			</div>
+			<button class="btn"><span>Save</span></button>
+		</div>
+	</div>
+</div>
+
+{% endblock %}
