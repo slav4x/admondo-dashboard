@@ -1,0 +1,28 @@
+{% extends 'components/_layout-auth.html' %}
+{% set site_title = 'Login' %}
+
+{% block content %}
+
+<div class="auth-content">
+	<div class="auth-title">Welcome to  platform</div>
+	<div class="auth-description">Enter login and password</div>
+	<form action="#" method="post" class="auth-form">
+		<label class="input">
+			<span>Email</span>
+			<input type="email" placeholder="" />
+		</label>
+		<label class="input">
+			<span>Password</span>
+			<input type="password" placeholder="" />
+		</label>
+		<a href="/forgot.html" class="auth-link">Forgot password?</a>
+		<label class="checkbox">
+			<input type="checkbox" checked />
+			<span>Remember me</span>
+		</label>
+		<button class="btn"><span>Sign In</span></button>
+		<div class="auth-bottom">No account? <a href="/register.html">Register</a></div>
+	</form>
+</div>
+
+{% endblock %}

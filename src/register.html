@@ -1,0 +1,96 @@
+{% extends 'components/_layout-auth.html' %}
+{% set site_title = 'Register' %}
+
+{% block content %}
+
+<div class="auth-content">
+	<div class="auth-title">Sign Up</div>
+	<form action="#" method="post" class="auth-form">
+		<div class="auth-toggle">
+			<label>
+				<input type="radio" name="type" value="Individual" checked>
+				<span>Individual</span>
+			</label>
+			<label>
+				<input type="radio" name="type" value="Company">
+				<span>Company</span>
+			</label>
+		</div>
+		<label class="input auth-company">
+			<span>Company name</span>
+			<input type="text" placeholder="" />
+		</label>
+		<div class="auth-row">
+			<label class="input auth-half">
+				<span>First name</span>
+				<input type="text" placeholder="" />
+			</label>
+			<label class="input auth-half">
+				<span>Last name</span>
+				<input type="text" placeholder="" />
+			</label>
+		</div>
+		<div class="auth-row">
+			<label class="input auth-half">
+				<span>Email</span>
+				<input type="email" placeholder="" />
+			</label>
+			<label class="select auth-half">
+				<span>Country</span>
+				<p>Choose</p>
+				<select>
+					<option value="Choose" selected disabled>Choose</option>
+					<option value="Germany">Germany</option>
+					<option value="France">France</option>
+				</select>
+			</label>
+		</div>
+		<label class="input">
+			<span>City</span>
+			<input type="text" placeholder="" />
+		</label>
+		<label class="input">
+			<span>Address</span>
+			<input type="text" placeholder="" />
+		</label>
+		<div class="auth-subtitle">Contacts <span>(Optional)</span></div>
+		<div class="auth-row">
+			<label class="select auth-half">
+				<span>Messenger</span>
+				<p>Choose</p>
+				<select>
+					<option value="Choose" selected disabled>Choose</option>
+					<option value="Telegram">Telegram</option>
+					<option value="What's App">What's App</option>
+				</select>
+			</label>
+			<label class="input auth-half">
+				<span>Phone number</span>
+				<input type="tel" placeholder="" />
+			</label>
+		</div>
+		<label class="checkbox">
+			<input type="checkbox" checked />
+			<span>I accept <a href="#">terms and conditions</a></span>
+		</label>
+		<button class="btn"><span>Sign Up</span></button>
+		<div class="auth-bottom">Already have an account? <a href="/login.html">Sign in</a></div>
+	</form>
+</div>
+
+<script>
+	const radios = document.querySelectorAll('input[name="type"]');
+	const companyField = document.querySelector('.auth-company');
+
+	radios.forEach((radio) => {
+		radio.addEventListener('change', () => {
+			if (radio.value === 'Company' && radio.checked) {
+				companyField.classList.add('is-visible');
+			} else if (radio.value === 'Individual' && radio.checked) {
+				companyField.classList.remove('is-visible');
+			}
+		});
+	});
+</script>
+
+{% endblock %}

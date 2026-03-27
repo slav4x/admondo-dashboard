@@ -146,3 +146,34 @@ input, textarea
         cursor: pointer
         &.show
             background-image: url("data:image/svg+xml,%3Csvg width='24' height='24' viewBox='0 0 24 24' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M14.5299 9.46992L9.46992 14.5299C8.81992 13.8799 8.41992 12.9899 8.41992 11.9999C8.41992 10.0199 10.0199 8.41992 11.9999 8.41992C12.9899 8.41992 13.8799 8.81992 14.5299 9.46992Z' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M17.8198 5.76998C16.0698 4.44998 14.0698 3.72998 11.9998 3.72998C8.46984 3.72998 5.17984 5.80998 2.88984 9.40998C1.98984 10.82 1.98984 13.19 2.88984 14.6C3.67984 15.84 4.59984 16.91 5.59984 17.77' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M8.41992 19.5299C9.55992 20.0099 10.7699 20.2699 11.9999 20.2699C15.5299 20.2699 18.8199 18.1899 21.1099 14.5899C22.0099 13.1799 22.0099 10.8099 21.1099 9.39993C20.7799 8.87993 20.4199 8.38993 20.0499 7.92993' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M15.5099 12.7C15.2499 14.11 14.0999 15.26 12.6899 15.52' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M9.47 14.53L2 22' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3Cpath d='M21.9998 2L14.5298 9.47' stroke='%23292D32' stroke-width='1.5' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A")
+
+.checkbox
+    display: block
+    cursor: pointer
+    input
+        @include visually-hidden
+        &:checked + span::before
+            background-color: var(--color-accent)
+    span
+        line-height: 20px
+        font-size: 12px
+        padding-left: 28px
+        display: block
+        position: relative
+        &::before
+            content: ''
+            position: absolute
+            top: 0
+            left: 0
+            display: block
+            background-color: #FFFFFF
+            background-image: url("data:image/svg+xml,%3Csvg width='10' height='8' viewBox='0 0 10 8' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M3.9485 8C4.34549 8 4.64592 7.87444 4.84979 7.61435L9.78541 1.30942C9.93562 1.11211 10 0.941704 10 0.7713C10 0.32287 9.59228 0 9.03434 0C8.6588 0 8.43348 0.116592 8.19743 0.412556L3.91631 6.07175L1.72747 3.78475C1.51288 3.56951 1.28755 3.47085 0.965665 3.47085C0.407725 3.47085 0 3.80269 0 4.26009C0 4.4574 0.0751073 4.63677 0.27897 4.83408L3.04721 7.65022C3.28326 7.89238 3.56223 8 3.93777 8H3.9485Z' fill='white'/%3E%3C/svg%3E%0A")
+            background-repeat: no-repeat
+            background-position: center
+            border: 1px solid rgba(104, 116, 136, 0.2)
+            border-radius: 4px
+            width: 20px
+            height: 20px
+            transition: var(--transition-ms)
+    a
+        color: var(--color-accent)

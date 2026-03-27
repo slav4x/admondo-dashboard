@@ -1,0 +1,129 @@
+.auth
+	@include flexbox
+	height: 100svh
+	background: var(--color-white)
+	&-sidebar
+		width: 580px
+		background: var(--color-accent)
+		height: 100%
+		padding: 44px
+		color: var(--color-white)
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		gap: 44px
+		position: relative
+		z-index: 5
+		overflow: hidden
+	&-text
+		font-size: 26px
+		font-weight: 500
+		max-width: 380px
+		line-height: 1.2
+		position: relative
+		z-index: 5
+	&-contact
+		font-weight: 400
+		color: rgba(255,255,255,.7)
+		line-height: 1.5
+		margin-top: auto
+		position: relative
+		z-index: 5
+		a
+			font-weight: 500
+			color: var(--color-white)
+	&-image
+		position: absolute
+		bottom: 0
+		right: 0
+		max-width: initial
+	&-main
+		flex: 1
+		padding: 44px
+		@include flexbox
+		align-items: center
+		justify-content: center
+	&-content
+		max-width: 400px
+		width: 100%
+	&-title
+		font-size: 24px
+		font-weight: 500
+		text-align: center
+	&-description
+		line-height: 20px
+		color: #364661
+		margin-top: 8px
+		text-align: center
+	&-form
+		margin-top: 12px
+		@include flexbox
+		flex-direction: column
+		align-items: flex-start
+		.input, .select, .auth-toggle
+			margin-top: 12px
+			// &:first-child
+			// 	margin-top: 0
+		.checkbox
+			margin-top: 24px
+		.btn
+			width: 100%
+			margin-top: 24px
+	&-link
+		font-size: 13px
+		line-height: 1.1
+		color: var(--color-accent)
+		margin-top: 8px
+	&-bottom
+		text-align: center
+		margin-top: 16px
+		font-weight: 500
+		line-height: 1.5
+		color: #4F5D74
+		width: 100%
+		a
+			color: var(--color-accent)
+	&-half
+		width: calc(100% / 2 - 6px)
+	&-row
+		width: 100%
+		@include flexbox
+		align-items: flex-start
+		justify-content: space-between
+	&-toggle
+		@include flexbox
+		align-items: flex-start
+		background: var(--color-gray)
+		width: 100%
+		height: 48px
+		border-radius: 8px
+		label
+			width: 50%
+			height: 100%
+			cursor: pointer
+			input
+				@include visually-hidden
+				&:checked + span
+					background: var(--color-white)
+					border-color: var(--color-accent)
+			span
+				@include flexbox
+				align-items: center
+				justify-content: center
+				width: 100%
+				height: 100%
+				border: 1px solid transparent
+				border-radius: 8px
+				font-weight: 500
+				transition: var(--transition-ms)
+	&-company
+		display: none
+		&.is-visible
+			display: block
+	&-subtitle
+		font-size: 16px
+		font-weight: 500
+		line-height: 20px
+		margin-top: 24px
+		span
+			opacity: 0.5

@@ -1,0 +1,40 @@
+{% set site_title = site_title | default('Title') %}
+<!DOCTYPE html>
+<html lang="en">
+	<head>
+		<meta charset="utf-8">
+		<meta name="language" content="Russian">
+		<meta name="format-detection" content="telephone=no">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge">
+		<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, minimum-scale=1.0, maximum-scale=1.0, user-scalable=no">
+		<script>
+            const meta = document.querySelector('meta[name="viewport"]');
+            meta.setAttribute('content', `user-scalable=no, width=${screen.width <= 420 ? 420 : 'device-width'}`);
+        </script>
+		<title>{{ site_title }}</title>
+		<link rel="preconnect" href="https://fonts.googleapis.com">
+		<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+		<link href="https://fonts.googleapis.com/css2?family=Golos+Text:wght@400..500&display=swap" rel="stylesheet">
+		<link rel="stylesheet" href="./css/libs.css?cb">
+		<link rel="stylesheet" href="./css/main.css?cb">
+	</head>
+	<body>
+
+		<div class="auth">
+			<div class="auth-sidebar">
+				<div class="auth-logo"><img src="img/svg/logo-white.svg" alt=""></div>
+				<div class="auth-text">Thus, the framework and place of personnel training provides a wide range of</div>
+				<div class="auth-contact">Any questions?<br> Email us at <a href="mailto:help@admondo.com">help@admondo.com</a></div>
+				<img src="img/auth-image.png" alt="" class="auth-image">
+			</div>
+			<div class="auth-main">
+
+				{% block content %}{% endblock %}
+			
+			</div>
+		</div>
+
+		<script defer src="./js/libs.js?cb"></script>
+		<script defer src="./js/main.js?cb"></script>
+	</body>
+</html>
